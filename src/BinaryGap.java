@@ -1,41 +1,35 @@
-import java.util.*;
 
 class BinaryGap {
-    public static int solution(int number) {
-        int i = 0;
-        List<Integer> indexArray = new ArrayList();
-        List<Integer> listOfGaps = new ArrayList();
-        String binaryString = Integer.toBinaryString(number);
-        System.out.println(binaryString);
-        while (i < binaryString.length()) {
-            if (binaryString.charAt(i) == '1') {
-                indexArray.add(i);
+    public static int solution(int N) {
+        String bgstring = Integer.toString(N, 2);
+        boolean started = false;
+        int counter = 0;
+        int maxCount = 0;
+
+        for (int i = 0; i < bgstring.length(); i++) {
+            String c = bgstring.substring(i, i + 1);
+
+            if (c.equals("1")) {
+                if (started) {
+                    if (counter > maxCount) {
+                        maxCount = counter;
+                    }
+                }
+                counter = 0;
+                started = true;
             }
-
-            i++;
-
-        }
-        for (int j = 0; j < indexArray.size(); j++) {
-            if (j < indexArray.size() - 1) {
-
-                Integer firstelement = indexArray.get(j);
-                Integer secondelement = indexArray.get(j + 1);
-                Integer integerGap = secondelement - 1 - firstelement;
-                listOfGaps.add(integerGap);
+            if (c.equals("0")) {
+                counter++;
             }
-
-
         }
+        return maxCount;
 
-        return (Collections.max(listOfGaps));
+
     }
 
     public static void main(String args[]) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter a positive no: ");
-        int number = sc.nextInt();
-        int value = solution(number);
-        System.out.println(value);
+        BinaryGap gap = new BinaryGap();
+        System.out.println(gap.solution(5));
     }
 
 }

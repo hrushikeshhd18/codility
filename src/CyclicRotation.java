@@ -1,21 +1,24 @@
-import java.util.Scanner;
+
 
 public class CyclicRotation {
-    public static void main(String args[]) {
+    public static int[] solution(int[] A, int K) {
+        for (int i = 0; i < K; i++) {
+            int lastValue = A[A.length - 1];
+            for (int j = (A.length - 2); j >= 0; j--) {
+                A[j+1] =A[j];
 
-    }
-
-        public int[] solution(int[] A, int K) {
-
-
-            int[] new_array = new int[A.length];
-
-            for (int i = 0; i < A.length; i++) {
-                int new_position = (i + K) % A.length;
-                new_array[new_position] = A[i];
             }
 
-            return new_array;
+            A[0]=lastValue;
         }
+        return A;
+    }
 
+    public static void main(String args[]) {
+        CyclicRotation CR = new CyclicRotation();
+        int[] result = (CR.solution(new int[]{1,2,3,4}, 1 ));
+        for(int i :result){
+            System.out.println(i + "");
+        }
+    }
 }
