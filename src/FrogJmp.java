@@ -2,6 +2,7 @@ public class FrogJmp {
     public int solution(int X, int Y, int D){
         int distance = Y-X;
         int jumps = (int)Math.ceil(distance/(double)D);
+
         return jumps;
 
     }
