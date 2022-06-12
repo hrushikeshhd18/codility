@@ -16,8 +16,8 @@ public class CyclicRotation {
 
     public static void main(String args[]) {
         CyclicRotation CR = new CyclicRotation();
-        int[] result = (CR.solution(new int[]{1,2,3,4}, 1 ));
-        for(int i :result){
+        int[] result = (CR.solution(new int[]{1,2,3,4}, 2 ));
+        for(int i : result){
             System.out.println(i + "");
         }
     }
