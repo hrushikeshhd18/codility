@@ -10,7 +10,7 @@ public class PassingCars {
                 passingCars += eastBoundCarsSeen;
             }
         }
-         if(passingCars > 100000){
+         if(passingCars > 1000000000){
             return -1;
         }else{
              return passingCars;
