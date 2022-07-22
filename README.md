@@ -80,12 +80,3 @@ Details Legend: D = *Difficulty*; TS = *Task Score*; C = *Completeness*; P = *Pe
 | []() []() | ![](https://img.shields.io/badge/D-ambitious-4fa0a4.svg) |
 -->
 
-## Tests
-Assuming you are using cmake, tests will be located in your `$BUILD_DIR}/bin` directory.  All tests are in the same `codility` binary.  Individual tests can be run per the [googletest framework documentation](https://github.com/google/googletest/blob/master/googletest/docs/advanced.md#running-test-programs-advanced-options).  Here is a quick reference:
-
-```
-/path/to/build/bin> codility --help
-/path/to/build/bin> codility --gtest_list_tests
-/path/to/build/bin> codility --gtest_filter=TestName.Test
-/path/to/build/bin> codility --seed 12345
-```
