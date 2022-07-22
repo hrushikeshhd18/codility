@@ -1,17 +1,24 @@
 public class PassingCars {
     public int solution(int[] A) {
-        int countOfZeros = 0, count = 0;
+      int eastBoundCarsSeen= 0;
+      int passingCars = 0;
 
-        for (int i = 0; i < A.length; i++){
-            if (A[i] == 0) countOfZeros++;
-            if (A[i] == 1) count += countOfZeros;
-            if (count > 1000000000) return -1;
+        for(int a : A){
+            if(a == 0){
+                eastBoundCarsSeen++;
+            }else {
+                passingCars += eastBoundCarsSeen;
+            }
         }
-        return count;
+         if(passingCars > 100000){
+            return -1;
+        }else{
+             return passingCars;
+         }
     }
 
     public static void main(String args[]) {
-        TapeEquilibrium TE = new TapeEquilibrium();
-        System.out.println(TE.solution(new int[]{0,1,0,1,1}));
+        PassingCars PC = new PassingCars();
+        System.out.println(PC.solution(new int[]{0,1,0,1,1}));
     }
 }
