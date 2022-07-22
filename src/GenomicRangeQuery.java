@@ -6,18 +6,14 @@ public class GenomicRangeQuery {
         int c = 0;
         int g = 0;
 
-        for (int i = 1; i < S.length(); i++) {
+        for (int i = 0; i < S.length(); i++) {
             String ch = S.substring(i, i + 1);
-            switch (ch) {
-                case "A":
-                    a++;
-                    break;
-                case "C":
-                    c++;
-                    break;
-                case "G":
-                    g++;
-                    break;
+            if (ch.equals("A")) {
+                a++;
+            } else if (ch.equals("C")) {
+                c++;
+            } else if (ch.equals("G")) {
+                g++;
             }
             counters[0][i + 1] = a;
             counters[1][i + 1] = c;
