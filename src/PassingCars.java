@@ -1,13 +1,13 @@
 public class PassingCars {
     public int solution(int[] A) {
-      int eastBoundCarsSeen= 0;
+      int carTravelingEast = 0;
       int passingCars = 0;
 
         for(int a : A){
             if(a == 0){
-                eastBoundCarsSeen++;
+                carTravelingEast++;
             }else {
-                passingCars += eastBoundCarsSeen;
+                passingCars = passingCars + carTravelingEast;
             }
         }
          if(passingCars > 1000000000){
