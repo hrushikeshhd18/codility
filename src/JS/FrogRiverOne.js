@@ -4,7 +4,7 @@ function FrogRiverOne(X, A) {
     if (A[i] <= X) {
       leaves.add(A[i]);
       if (leaves.size === X) {
-        console.log(i);
+        // console.log(i);
         return i;
       }
     }
@@ -12,4 +12,4 @@ function FrogRiverOne(X, A) {
   return -1;
 }
 
-FrogRiverOne(6, [1, 3, 1, 4, 2, 3, 5, 4, 6, 5]);
+console.log(FrogRiverOne(6, [1, 3, 1, 4, 2, 3, 5, 4, 6, 5]));
