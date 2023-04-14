@@ -16,7 +16,6 @@
 function PermCheck(A) {
   const n = A.length;
   const count = new Array(n).fill(0);
-  // console.log(count);
 
   for (let i = 0; i < n; i++) {
     if (A[i] > n) {
@@ -30,9 +29,7 @@ function PermCheck(A) {
     }
 
     count[A[i] - 1] = 1;
-    console.log(count);
   }
-  console.log(1);
   return 1;
 }
-PermCheck([4, 1, 3, 4]);
+console.log(PermCheck([4, 1, 3, 2]));
