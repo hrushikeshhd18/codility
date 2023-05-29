@@ -16,7 +16,7 @@ function solution(N = 529) {
       cGap++;
     }
   }
-  // console.log(maxGap);
+  console.log(binary);
   return maxGap;
 }
 
